@@ -3,6 +3,15 @@
 <head>
     <title>商户</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    
     <script src="./app.js"></script>
     <script>
       const getvalArr = document.URL.split('?')[1]
@@ -15,58 +24,41 @@
 <div>
 
 
-    <h1>电子积分案例</h1>
+    <h1>电子优惠劵系统</h1>
     <div id="info">
         <p id="status">Status</p>
     </div>
     <br/>
     <br/>
     <h2>商家端</h2>
-    <div class="block">
-        <h3>查询信息</h3>
-        <button id="getCurrentMerchant" onclick="App.getCurrentMerchant(currentAccount)">当前商户</button>
+    <h3>查询信息</h3>
+        <button id="getCurrentMerchant" onclick="App.getCurrentMerchant(currentAccount)" style="height: 30px;width:385px" >当前商户</button>
         <br>
-        <button id="getScoreWithMerchantAddr" onclick="App.getScoreWithMerchantAddr(currentAccount)">当前余额</button>
-    </div>
+        <button id="getScoreWithMerchantAddr" onclick="App.getScoreWithMerchantAddr(currentAccount) " style="height: 30px;width:385px">当前余额</button>
 
-    <div class="block">
+
         <h3>转让积分</h3>
-        <label for="anotherAccountAddr">转让积分地址</label><input type="text" id="anotherAccountAddr"
-                                                             placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae">
-        <br><label for="scoreAmount">积分数量</label><input type="text" id="scoreAmount" placeholder="e.g., ******">
+        <label for="anotherAccountAddr">转让积分地址</label><input type="text" id="anotherAccountAddr" style="height: 30px;width:385px">
+        <br><label for="scoreAmount">积分数量</label><input type="text" id="scoreAmount" style="height: 30px;width:385px">
         <br>
-        <button id="transferScoreToAnotherFromMerchant"
+        <button id="transferScoreToAnotherFromMerchant" style="height: 30px;width:385px"
                 onclick="App.transferScoreToAnotherFromMerchant(currentAccount)">转让积分
         </button>
-    </div>
-    <div class="block">
-        <h3>添加商品</h3>
-        <br><br><br><label for="goodId">商品ID</label><input type="text" id="goodId">
-        <br><label for="goodPrice">商品价格</label><input type="text" id="goodPrice">
-        <br>
-        <button onclick="App.addGood(currentAccount)">添加商品</button>
-        <button onclick="App.getGoodsByMerchant(currentAccount)">查看已添加商品</button>
-    </div>
 
-    <div class="block">
+        <h3>添加优惠劵</h3>
+        <br><br><br><label for="goodId">优惠劵ID</label><input type="text" id="goodId" style="height: 30px;width:385px">
+        <br><label for="goodPrice">优惠劵价格</label><input type="text" id="goodPrice" style="height: 30px;width:385px">
+        <br>
+        <button onclick="App.addGood(currentAccount)" style="height: 30px;width:385px">添加优惠劵</button>
+        <button onclick="App.getGoodsByMerchant(currentAccount)" style="height: 30px;width:385px">查看已添加优惠劵</button>
+
+
+
         <h3>积分清算</h3>
-        <label for="settleAmount">清算积分数额</label><input type="text" id="settleAmount">
+        <label for="settleAmount">清算积分数额</label><input type="text" id="settleAmount" style="height: 30px;width:385px">
         <br>
-        <button onclick="App.settleScoreWithBank(currentAccount)">清算积分</button>
-    </div>
+        <button onclick="App.settleScoreWithBank(currentAccount)" style="height: 30px;width:385px">清算积分</button>
 
-    <br><br><br>
-    <br/>
-    <h2>测试信息</h2>
-    <div>
-        <button onclick="App.allAccounts()">Account(console)</button>
-        <br><br>
-    </div>
-    <div>
-        <p>Console</p>
-        <div id="console">
-        </div>
-    </div>
 </div>
 </body>
 
